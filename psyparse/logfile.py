@@ -1,10 +1,20 @@
 class Logfile(object):
-    
-    def __init__(self, filename=None, db_obj=None):
-        if filename is not None:
-            self.filename = filename
-        if db_obj is not None:
-            self.db_obj = db_obj
+
+    def __init__(self, filename=None):
+        self._filename = filename
+        self._mapped_variables = {}
+        self._unmapped_variables = []
+
+    @property
+    def current_trial(self):
+        try:
+            return self._current_trial
+        except:
+            return None
+
+    @current_trial.setter
+    def current_trial(self, new_current_trial):
+        self._current_trial = new_current_trial
 
     @property
     def filename(self):
@@ -14,23 +24,70 @@ class Logfile(object):
             return None
 
     @property
-    def db_obj(self):
+    def mapped_variables(self):
+        return self._mapped_variables
+
+    @property
+    def unmapped_variables(self):
+        return self._unmapped_variables
+
+    def close(self):
+        self._logfile.close()
+        self._logfile = None
+
+    def open(self):
+        self._logfile = open(self.filename, 'rb')
+
+    def parse(self, handler=None):
+        # if no handler has been provided, use the default, debug
+        # handler
+        if handler is None:
+            from .handler.debug import Debug
+            handler = Debug()
+        # initialize our state variables
+        self._current_trial = None
+        self._unmapped_variables = []
         try:
-            return self._db_obj
-        except:
-            return None
+            # open the logfile for reading
+            self.open()
+            line_number = 0
+            # for each line in the log file, create a log entry object
+            while 1:
+                line = self.readline()  # get the next line
+                if not line:            # if no line found, EOF, exit
+                    break
+                # if line is not blank, process line
+                line_number += 1
+                if len(line) > 0:
+                    current_pos = self.tell()
+                    import psyparse.entry
+                    entry = psyparse.entry.read(logfile=self, pos=current_pos, raw_entry=line)
+                    # handle the entry if it exists
+                    if entry is not None:  
+                        handler.handle(entry)
+                    self.seek(current_pos)    # reset log file position (this
+                                              # may have been changed during
+                                              # parsing)
+            
+            # warn the user if any unmapped variables were found
+            if len(self.unmapped_variables) > 0:
+                import warnings
+                print "\n\n"
+                warnings.warn("The following variables were found but not mapped: %s"
+                              % self.unmapped_variables)
+        except Exception as e:
+            print "Error in %s: %s (%s)" % (self.filename, line_number, e)
+        finally:
+            self.close()
 
-    def parse():
-        f = open(filename, 'rb')
-        lines = f.readlines() # for now this is fine, but eventually
-                              # this should be changed so that the
-                              # logfile is not read all at once, maybe
-                              # just pass a reference to the logfile
-                              # and pointer to the object rather than
-                              # the lines object
+    def read(self, num_bytes):
+        return self._logfile.read(num_bytes)
 
-        # create an object capable of mapping lines to event types
-        mapper = Mapper()
-        for line in lines:
-            mapper.map(line)
-        
+    def readline(self):
+        return self._logfile.readline().strip('\n')
+
+    def seek(self, new_pos):
+        self._logfile.seek(new_pos)
+
+    def tell(self):
+        return self._logfile.tell()

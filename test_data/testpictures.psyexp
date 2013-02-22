@@ -1,0 +1,129 @@
+<PsychoPy2experiment version="1.75.01" encoding="utf-8">
+  <Settings>
+    <Param name="Show mouse" val="False" valType="bool" updates="None"/>
+    <Param name="Save csv file" val="False" valType="bool" updates="None"/>
+    <Param name="Monitor" val="testMonitor" valType="str" updates="None"/>
+    <Param name="Enable Escape" val="True" valType="bool" updates="None"/>
+    <Param name="color" val="$[1.000,1.000,1.000]" valType="str" updates="None"/>
+    <Param name="Window size (pixels)" val="[1280, 800]" valType="code" updates="None"/>
+    <Param name="Full-screen window" val="True" valType="bool" updates="None"/>
+    <Param name="colorSpace" val="rgb" valType="str" updates="None"/>
+    <Param name="Save log file" val="True" valType="bool" updates="None"/>
+    <Param name="Experiment info" val="{u'session': u'001', u'participant': u''}" valType="code" updates="None"/>
+    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
+    <Param name="Save wide csv file" val="True" valType="bool" updates="None"/>
+    <Param name="Save psydat file" val="True" valType="bool" updates="None"/>
+    <Param name="expName" val="testpictures" valType="str" updates="None"/>
+    <Param name="logging level" val="debug" valType="code" updates="None"/>
+    <Param name="Units" val="use prefs" valType="str" updates="None"/>
+    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
+    <Param name="Saved data folder" val="" valType="code" updates="None"/>
+    <Param name="Screen" val="1" valType="num" updates="None"/>
+  </Settings>
+  <Routines>
+    <Routine name="dots">
+      <TextComponent name="text">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="$[-1.000,-1.000,-1.000]" valType="str" updates="constant"/>
+        <Param name="text" val="." valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[randint(-360,360), randint(-360,360)]" valType="code" updates="set every repeat"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="100" valType="code" updates="constant"/>
+      </TextComponent>
+      <TextComponent name="text_2">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_2" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="$[-1.000,-1.000,-1.000]" valType="str" updates="constant"/>
+        <Param name="text" val="." valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[randint(-360,360),randint(-360,360)]" valType="code" updates="set every repeat"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="100" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="key_resp" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'y','n'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="store" val="last key" valType="str" updates="constant"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="trial">
+      <ImageComponent name="image">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="image" valType="code" updates="constant"/>
+        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
+        <Param name="stopVal" val="randint(30,1200)" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="5" valType="code" updates="None"/>
+        <Param name="mask" val="None" valType="str" updates="constant"/>
+        <Param name="pos" val="[0,0]" valType="code" updates="constant"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="startEstim" val="0" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
+        <Param name="startType" val="frame N" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="frame N" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="image" val="$stimFile" valType="str" updates="set every repeat"/>
+        <Param name="advancedParams"/>
+        <Param name="size" val="[790, 790]" valType="code" updates="constant"/>
+      </ImageComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="conditionsFile" val="trialTypes.csv" valType="str" updates="None"/>
+      <Param name="name" val="trials" valType="code" updates="None"/>
+      <Param name="random seed" val="" valType="code" updates="None"/>
+      <Param name="loopType" val="random" valType="str" updates="None"/>
+      <Param name="nReps" val="1" valType="code" updates="None"/>
+      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
+      <Param name="conditions" val="[{'stimFile': u'/Users/katielynam/labeled_photos/photos/003030.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003031.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003032.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003033.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003034.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003035.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003036.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003037.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003038.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003039.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003040.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003041.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003042.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003043.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003044.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003045.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003046.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003047.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003048.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003049.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003050.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003051.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003052.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003053.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003054.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003055.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003056.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003057.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003058.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003059.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003060.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003061.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003062.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003063.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003064.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003065.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003066.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003067.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003068.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003069.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003070.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003071.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003072.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003073.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003074.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003075.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003076.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003077.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003078.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003079.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003080.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003081.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003082.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003083.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003084.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003085.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003086.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003087.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003088.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003089.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003090.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003091.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003092.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003093.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003094.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003095.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003096.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003097.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003098.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003099.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003100.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003101.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003102.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003103.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003104.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003105.png'}, {'stimFile': u'/Users/katielynam/labeled_photos/photos/003106.png'}]" valType="str" updates="None"/>
+    </LoopInitiator>
+    <Routine name="trial"/>
+    <LoopInitiator loopType="TrialHandler" name="probes">
+      <Param name="conditionsFile" val="" valType="str" updates="None"/>
+      <Param name="name" val="probes" valType="code" updates="None"/>
+      <Param name="random seed" val="" valType="code" updates="None"/>
+      <Param name="loopType" val="random" valType="str" updates="None"/>
+      <Param name="nReps" val="5" valType="code" updates="None"/>
+      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
+      <Param name="conditions" val="None" valType="str" updates="None"/>
+    </LoopInitiator>
+    <Routine name="dots"/>
+    <LoopTerminator name="probes"/>
+    <LoopTerminator name="trials"/>
+  </Flow>
+</PsychoPy2experiment>
