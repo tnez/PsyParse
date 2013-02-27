@@ -1,0 +1,5 @@
+# This is a map of class name to class path
+###########################################
+
+Image   psyparse.entry.exp_data.stimuli.image
+Probe   psyparse.entry.exp_data.stimuli.probe

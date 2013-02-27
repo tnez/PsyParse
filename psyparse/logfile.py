@@ -2,7 +2,7 @@ class Logfile(object):
 
     def __init__(self, filename=None):
         self._filename = filename
-        self._mapped_variables = {}
+        self._mapped_variables = None
         self._unmapped_variables = []
 
     @property
@@ -26,6 +26,10 @@ class Logfile(object):
     @property
     def mapped_variables(self):
         return self._mapped_variables
+
+    @mapped_variables.setter
+    def mapped_variables(self, new_map):
+        self._mapped_variables = new_map
 
     @property
     def unmapped_variables(self):
@@ -58,7 +62,7 @@ class Logfile(object):
                     break
                 # if line is not blank, process line
                 line_number += 1
-                if len(line) > 0:
+                if len(line) != '\n':
                     current_pos = self.tell()
                     import psyparse.entry
                     entry = psyparse.entry.read(logfile=self, pos=current_pos, raw_entry=line)
@@ -84,7 +88,11 @@ class Logfile(object):
         return self._logfile.read(num_bytes)
 
     def readline(self):
-        return self._logfile.readline().strip('\n')
+        line = self._logfile.readline()
+        if line == '\n':
+            return line
+        else:
+            return line.strip('\n')
 
     def seek(self, new_pos):
         self._logfile.seek(new_pos)

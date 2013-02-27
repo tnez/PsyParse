@@ -22,6 +22,17 @@ class Mapping(object):
             return None
 
 class VarMap(dict):
+
+    def add(self, orig_name, new_name, klass_name):
+        """Add an entry to the variable map. This will map the
+        orig_name (name as it appears in the logfile) to a given class
+        and name each instance by the given new name.
+        """
+        if klass_name in available_classes():
+            klass_path = _class_hash()[klass_name]
+            self[orig_name] = Mapping((new_name, klass_path))
+        else:
+            raise Exception("%s is not in list of available classes" % klass_name)
     
     def klass(self, orig_name):
         try:
@@ -31,7 +42,7 @@ class VarMap(dict):
 
     def transformed_name(self, orig_name):
         try:
-            return self[orig_name].klass
+            return self[orig_name].transformed_name
         except:
             return None
 
@@ -69,7 +80,32 @@ def available_classes():
     List all available valid classes that can be used for mapping
     variables.
     """
-    import inspect, sys.modules
-    for name, obj in inspect.getmembers(sys.modules[__name__], inspect.isclass):
-        print name
-        
+    ret = []
+    for mapping in _read_available_classes():
+        ret.append(mapping['name'])
+    return ret
+
+def _read_available_classes():
+    import os.path
+    libdir = '%s/../lib' % (os.path.abspath(os.path.dirname(__file__)))
+    f = open('%s/klass_map.txt' % libdir, 'rb')
+    try:
+        while 1:
+            line = f.readline()
+            if not line:
+                break
+            if line[0] == '#':
+                continue
+            if (line) != '\n':
+                name, path = line.strip('\n').split()
+                yield {'name': name, 'path': path}
+    except Exception as e:
+        print "There was a problem with the class map: %s" % e
+    finally:
+        f.close()
+
+def _class_hash():
+    ret = {}
+    for entry in _read_available_classes():
+        ret[entry['name']] = entry['path']
+    return ret
