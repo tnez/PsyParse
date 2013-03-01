@@ -10,7 +10,7 @@ class Keypress(Entry):
         self._trial_id = logfile.current_trial.uuid
 
     def __str__(self):
-        return "<KEYPRESS> Char: %s Time: %s Trial_ID: %s" % \
+        return "<Keypress> Char: %s Time: %s Trial_ID: %s" % \
             (self.character, self.timestamp, self.trial_id)
 
     @property

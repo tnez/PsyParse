@@ -4,17 +4,16 @@ class Logfile(object):
         self._filename = filename
         self._mapped_variables = None
         self._unmapped_variables = []
+        self._trial_stack = []
 
     @property
-    def current_trial(self):
-        try:
-            return self._current_trial
-        except:
-            return None
+    def trial_stack(self):
+        """Return the current trial stack. The hierarchy is represented such
+        that the greater the index, the more descendant the trial. The
+        zero-indexed element will always represent the current root trial.
+        """
+        return self._trial_stack
 
-    @current_trial.setter
-    def current_trial(self, new_current_trial):
-        self._current_trial = new_current_trial
 
     @property
     def filename(self):
@@ -35,6 +34,14 @@ class Logfile(object):
     def unmapped_variables(self):
         return self._unmapped_variables
 
+    def register_current_trial(self, new_current_trial):
+        """Add a trial to the trial stack. This will determine (using the rep
+        and index members) and reorganize the structure of the trial stack on
+        the fly.
+        """
+        
+
+    ## FILE METHODS ###########################################################
     def close(self):
         self._logfile.close()
         self._logfile = None
@@ -69,9 +76,9 @@ class Logfile(object):
                     # handle the entry if it exists
                     if entry is not None:  
                         handler.handle(entry)
-                    self.seek(current_pos)    # reset log file position (this
-                                              # may have been changed during
-                                              # parsing)
+                    self.seek(current_pos)  # reset log file position (this
+                                            # may have been changed during
+                                            # parsing)
             
             # warn the user if any unmapped variables were found
             if len(self.unmapped_variables) > 0:
