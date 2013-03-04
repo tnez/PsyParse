@@ -9,8 +9,8 @@ class Image(BaseStimulus):
         self.filename = get_filename(logfile, orig_var_name)
 
     def __str__(self):
-        return "<Image> Filename: %s Start: %s End: %s" % \
-            (self.filename, self.start, self.stop)
+        return "Image: %s Filename: %s Start: %s End: %s Parent: %s" % \
+            (self.uuid, self.filename, self.start, self.stop, self.parent)
             
     @property
     def filename(self):
@@ -23,6 +23,11 @@ class Image(BaseStimulus):
     def filename(self, new_filename):
         self._filename = new_filename
         
+    def as_dict(self):
+        ret = BaseStimulus.as_dict(self)
+        ret['filename'] = self.filename
+        return ret
+    
 def get_filename(logfile, var_name):
     # read backwards until we find "Set %orig_name image="
     search_string = "Set %s image=" % var_name

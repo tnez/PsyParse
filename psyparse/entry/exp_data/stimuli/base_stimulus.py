@@ -9,7 +9,8 @@ class BaseStimulus(Entry):
         self._orig_name = orig_var_name
         self.name = trans_var_name
         self.start = self.timestamp
-        self.stop = get_stop_time(logfile, orig_var_name)
+        self.stop = _get_stop_time(logfile, orig_var_name)
+        self.parent = logfile.trial_stack[-1].uuid
 
         @property
         def name(self):
@@ -27,7 +28,7 @@ class BaseStimulus(Entry):
             try:
                 return self._start
             except:
-                return None
+                return float('NaN')
             
         @start.setter
         def start(self, new_start):
@@ -38,27 +39,29 @@ class BaseStimulus(Entry):
             try:
                 return self._end
             except:
-                return None
+                return float('NaN')
 
         @stop.setter
         def stop(self, new_stop):
             self._stop = new_stop
-
-
-def get_stop_time(logfile, var_name):
-    # read forward until we find 'Stopped presenting
-    # %orig_var_name' or EOF
-    line = None
-    search_string = 'Stopped presenting %s' % var_name
-    while 1:
-        last_line = line # store the last read line
-        line = logfile.readline()
-        # if we have reached EOF, take timestamp from last
-        # line
-        if not line:
-            return float(last_line.split('\t')[0])
-        if line[-len(search_string):] == search_string:
-            return float(line.split('\t')[0])
+            
+        @property
+        def parent(self):
+            try:
+                return self._parent 
+            except:
+                return None
+            
+        @parent.setter
+        def parent(self, new_parent):
+            self._parent = new_parent
+            
+        def as_dict(self):
+            ret = Entry.as_dict(self)
+            ret['start'] = self.start
+            ret['stop'] = self.stop
+            ret['parent'] = self.parent
+            return ret
 
 def read(logfile=None, pos=None, raw_entry=None):
     var_name = raw_entry.split()[-1]
@@ -72,3 +75,18 @@ def read(logfile=None, pos=None, raw_entry=None):
         if var_name not in logfile.unmapped_variables:
             logfile.unmapped_variables.append(var_name)
         return None
+
+def _get_stop_time(logfile, var_name):
+    # read forward until we find 'Stopped presenting
+    # %orig_var_name' or EOF
+    line = None
+    search_string = 'Stopped presenting %s' % var_name
+    while 1:
+        last_line = line # store the last read line
+        line = logfile.readline()
+        # if we have reached EOF, take timestamp from last
+        # line
+        if not line:
+            return float(last_line.split('\t')[0])
+        if line[-len(search_string):] == search_string:
+            return float(line.split('\t')[0])

@@ -12,6 +12,10 @@ varmap.add('text_2', 'probe.2', 'Probe')
 varmap.add('image', 'image', 'Image')
 logfile.mapped_variables = varmap
 
+# set handler
+from psyparse.handler.pydict import PyDict
+logfile.handler = PyDict()
+
 # parse logfile
 logfile.parse()
 

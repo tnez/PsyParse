@@ -1,2 +1,2 @@
-from .user_input import read
+from .user_input import UserInput, read
 import keypress

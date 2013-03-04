@@ -9,8 +9,8 @@ class Probe(BaseStimulus):
         self.position = get_position(logfile, orig_var_name)
 
     def __str__(self):
-        return "<Probe> X: %0.1f Y: %0.1f Start: %s End: %s" % \
-            (self.x, self.y, self.start, self.stop)
+        return "Probe: %s X: %0.1f Y: %0.1f Start: %s End: %s Parent: %s" % \
+            (self.uuid, self.x, self.y, self.start, self.stop, self.parent)
     
     @property
     def position(self):
@@ -38,6 +38,12 @@ class Probe(BaseStimulus):
         except:
             return None
 
+    def as_dict(self):
+        ret = BaseStimulus.as_dict(self)
+        ret['x'] = self.x
+        ret['y'] = self.y
+        return ret
+        
 def get_position(logfile, var_name):
     # read backwards until we find "Set %orig_name pos="
     search_string = "Set %s pos=" % var_name

@@ -1,17 +1,15 @@
-from ...entry import Entry
+from psyparse.entry.user_input import UserInput
 
-
-class Keypress(Entry):
+class Keypress(UserInput):
     
     def __init__(self, logfile=None, pos=None, raw_entry=None):
-        Entry.__init__(self, logfile=logfile, pos=pos, raw_entry=raw_entry)
+        UserInput.__init__(self, logfile=logfile, pos=pos, raw_entry=raw_entry)
         import re
         self._character = re.search('Keypress: (.+)$', raw_entry).group(1)
-        self._trial_id = logfile.current_trial.uuid
 
     def __str__(self):
-        return "<Keypress> Char: %s Time: %s Trial_ID: %s" % \
-            (self.character, self.timestamp, self.trial_id)
+        return "<Keypress> Char: %s Time: %s Parent: %s" % \
+            (self.character, self.timestamp, self.parent)
 
     @property
     def character(self):
@@ -19,13 +17,11 @@ class Keypress(Entry):
             return self._character
         except:
             return None
+        
+    def as_dict(self):
+        ret = UserInput.as_dict(self)
+        ret['character'] = self.character
+        return ret
 
-    @property
-    def trial_id(self):
-        try:
-            return self._trial_id
-        except:
-            return None
-    
 def read(logfile=None, pos=None, raw_entry=None):
     return Keypress(logfile, pos, raw_entry)
