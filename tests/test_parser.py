@@ -13,9 +13,13 @@ varmap.add('image', 'image', 'Image')
 logfile.mapped_variables = varmap
 
 # set handler
-from psyparse.handler.pydict import PyDict
-logfile.handler = PyDict()
+logfile.handler = psyparse.handler.tree.Tree()
 
 # parse logfile
 logfile.parse()
+
+# output data
+foo = logfile.handler.group_by_root()
+for uuid, record in logfile.handler.data.items():
+    print uuid, record
 

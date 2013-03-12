@@ -12,56 +12,56 @@ class BaseStimulus(Entry):
         self.stop = _get_stop_time(logfile, orig_var_name)
         self.parent = logfile.trial_stack[-1].uuid
 
-        @property
-        def name(self):
-            try:
-                return self._name
-            except:
-                return None
-            
-        @name.setter
-        def name(self, new_name):
-            self._name = new_name
+    @property
+    def name(self):
+        try:
+            return self._name
+        except:
+            return None
+        
+    @name.setter
+    def name(self, new_name):
+        self._name = new_name
 
-        @property
-        def start(self):
-            try:
-                return self._start
-            except:
-                return float('NaN')
-            
-        @start.setter
-        def start(self, new_start):
-            self._start = new_start
+    @property
+    def start(self):
+        try:
+            return self._start
+        except:
+            return float('NaN')
+        
+    @start.setter
+    def start(self, new_start):
+        self._start = new_start
 
-        @property
-        def stop(self):
-            try:
-                return self._end
-            except:
-                return float('NaN')
+    @property
+    def stop(self):
+        try:
+            return self._end
+        except:
+            return float('NaN')
 
-        @stop.setter
-        def stop(self, new_stop):
-            self._stop = new_stop
-            
-        @property
-        def parent(self):
-            try:
-                return self._parent 
-            except:
-                return None
-            
-        @parent.setter
-        def parent(self, new_parent):
-            self._parent = new_parent
-            
-        def as_dict(self):
-            ret = Entry.as_dict(self)
-            ret['start'] = self.start
-            ret['stop'] = self.stop
-            ret['parent'] = self.parent
-            return ret
+    @stop.setter
+    def stop(self, new_stop):
+        self._stop = new_stop
+        
+    @property
+    def parent(self):
+        try:
+            return self._parent 
+        except:
+            return None
+        
+    @parent.setter
+    def parent(self, new_parent):
+        self._parent = new_parent
+        
+    def as_dict(self):
+        ret = Entry.as_dict(self)
+        ret['start'] = self.start
+        ret['stop'] = self.stop
+        ret['parent'] = self.parent
+        return ret
 
 def read(logfile=None, pos=None, raw_entry=None):
     var_name = raw_entry.split()[-1]

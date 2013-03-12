@@ -8,6 +8,10 @@ class Entry(object):
         return "%0.4f\t%s\t%s" % (self.timestamp, self.log_type, self.log_text)
 
     @property
+    def klass(self):
+        return self.__class__.__name__.lower()
+    
+    @property
     def log_text(self):
         try:
             return self._log_text
@@ -34,7 +38,7 @@ class Entry(object):
         try:
             return self._name
         except:
-            return self.__class__.__name__
+            return self.__class__.__name__.lower()
         
     @name.setter
     def name(self, new_name):
@@ -53,11 +57,13 @@ class Entry(object):
         
     @property
     def uuid(self):
-        return self._uuid
+        return str(self._uuid)
     
     def as_dict(self):
         return {
+                'class': self.klass,
                 'log_text': self.log_text,
+                'name': self.name,
                 'timestamp': self.timestamp
                 }
     
