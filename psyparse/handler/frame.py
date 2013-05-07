@@ -20,7 +20,7 @@ class Frame(Tree):
         header - a list of strings representing the header of the data frame;
                  order should correspond to variables
     """
-    def __init__(self, nodes=[], variables=[], header=[], sort_by=None):
+    def __init__(self, nodes=[], variables=[], header=[], sort_by=[]):
         Tree.__init__(self)
         self._is_dirty = True
         self.nodes = nodes
@@ -58,19 +58,28 @@ class Frame(Tree):
     @sort_by.setter
     def sort_by(self, new_sort_by):
         # make sure all elements are in header
-        if new_sort_by not in self.header:
-            raise("%s was not found in header -- sort_by was not set" % new_sort_by)
+        for item in new_sort_by:
+            if item not in self.header:
+                raise Exception("%s was not found in header -- sort_by was not set" % new_sort_by)
         # go ahead and sort elements
         else:
             self._sort_by = new_sort_by
 
     @property
     def values(self):
+        # rebuild values if changes have been made since last build
         if self._is_dirty:
+            self._build_selected_nodes()
             self._build_values()
+        # if we have a list of sort by keys, loop through in reverse
+        # order, sorting by each key, so that the end result is sorted
+        # by keys, in the order specified
         if len(self.sort_by) >= 1:
-            sort_index = self.header.index(self.sort_by)
-            return sorted(self._values, key=lambda record: record[sort_index])
+            tmp_values = self._values
+            for sort_key in reversed(self.sort_by):
+                sort_index = self.header.index(sort_key)
+                tmp_values = sorted(tmp_values, key=lambda record: record[sort_index])
+            return tmp_values
         else:
             return self._values
     
