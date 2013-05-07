@@ -91,6 +91,14 @@ class Frame(Tree):
     def variables(self, new_variables):
         self._variables = new_variables
         self._is_dirty = True
+
+    def write_to_csv(self, filename):
+        import csv
+        with open(filename, 'wb') as csvfile:
+            writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
+            writer.writerow(self.header)
+            for record in self.values:
+                writer.writerow(record)
     
     def _build_values(self):
         # reset values
