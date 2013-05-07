@@ -7,9 +7,9 @@ class BaseHandler(object):
     """
     def new(self, entry):
         """Create a new entry"""
-        raise ("""'new' method not defined in handler subclass""")
+        raise Exception("""'new' method not defined in handler subclass""")
         
     def update(self, entry, attribute, new_value):
         """Update a given entry. This is useful when properties of a given
         entry are only discovered sometime later in parsing."""
-        raise("""'update' method not defined in handler subclass""")
+        raise Exception("""'update' method not defined in handler subclass""")
