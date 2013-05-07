@@ -37,7 +37,7 @@ class BaseStimulus(Entry):
     @property
     def stop(self):
         try:
-            return self._end
+            return self._stop
         except:
             return float('NaN')
 
