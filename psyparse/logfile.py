@@ -3,7 +3,7 @@ class Logfile(object):
     def __init__(self, filename=None):
         self._filename = filename
         self._logfile = None
-        from psyparse.varmap import VarMap
+        from .varmap import VarMap
         self._mapped_variables = VarMap()
         self._unmapped_variables = []
         self._sequence_stack = []
@@ -29,7 +29,7 @@ class Logfile(object):
         try:
             return self._hanlder
         except:
-            from psyparse.handler.debug import Debug
+            from .handler.debug import Debug
             self._handler = Debug()
             return self._handler
     
@@ -54,7 +54,7 @@ class Logfile(object):
         mapping."""
         # get the old parser if it exists
         old_handler = self.handler
-        from psyparse.handler.devnull import DevNull
+        from .handler.devnull import DevNull
         self.handler = DevNull()
         self.parse()
         print "" # print a pretty newline
@@ -85,8 +85,8 @@ class Logfile(object):
                 line_number += 1
                 if line != '\n':
                     current_pos = self.tell()
-                    import psyparse.entry
-                    entry = psyparse.entry.read(logfile=self, pos=current_pos, raw_entry=line)
+                    from . import entry
+                    entry = entry.read(logfile=self, pos=current_pos, raw_entry=line)
                     # handle the entry if it exists
                     if entry is not None:  
                         self.handler.new(entry)
