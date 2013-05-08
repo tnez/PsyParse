@@ -37,8 +37,6 @@ psyparse.available_classes()
 If the installation worked, you should see a list of available
 classes.
 
-
-
 ## Usage
 
 *This needs to be completed*
