@@ -2,4 +2,6 @@
 ###########################################
 
 Image   psyparse.entry.exp_data.stimuli.image
+Keypress psyparse.entry.user_input.keypress
 Probe   psyparse.entry.exp_data.stimuli.probe
+Trial   psyparse.entry.exp_data.trial

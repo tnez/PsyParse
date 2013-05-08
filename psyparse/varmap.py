@@ -85,6 +85,26 @@ def available_classes():
         ret.append(mapping['name'])
     return ret
 
+def attributes_for_class(klass_name):
+    if klass_name not in available_classes():
+        print "%s is not registered as an available class" % klass_name
+    # create an empty varmap to use within this function
+    varmap = VarMap()
+    # add our specified class to the varmap using dummy variable names
+    # (only the class is important)
+    varmap.add('foo', 'foo', klass_name)
+    # import our specified klass
+    klass_file = __import__(varmap['foo'].klass, fromlist=[klass_name])
+    klass = getattr(klass_file, klass_name)
+    # inspect our class instance
+    # 1) get every member for our given class and put it in a list
+    # 2) for every item in that list, print to console
+    import inspect
+    members = [x[0] for x in inspect.getmembers(klass) if not x[0].startswith('_')]
+    print "\nAccessible attributes for %s are as follows:\n" % klass_name
+    for member in members:
+        print "\t%s" % member
+
 def _read_available_classes():
     import os.path
     libdir = '%s/../lib' % (os.path.abspath(os.path.dirname(__file__)))
