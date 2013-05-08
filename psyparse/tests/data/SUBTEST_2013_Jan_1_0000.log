@@ -1,0 +1,225 @@
+11.8394	EXP	Created sequence: random, trialTypes=5, nReps=1, seed=None
+11.8401	EXP	New trial (rep=0, index=0): {'stimFile': u'/Users/katielynam/labeled_photos/photos/003085.png'}
+11.9868	EXP	Set image image=/Users/katielynam/labeled_photos/photos/003085.png
+11.9868	EXP	Started presenting image
+13.7717	EXP	Created sequence: random, trialTypes=1, nReps=5, seed=None
+13.7724	EXP	New trial (rep=0, index=0): None
+13.7873	EXP	Stopped presenting image
+13.7873	EXP	Set text pos=[ -64.  231.]
+13.7873	EXP	Set text_2 pos=[-316.  -59.]
+13.7873	EXP	Started presenting text
+13.7873	EXP	Started presenting text_2
+15.1900	DATA	Keypress: n
+15.2065	EXP	New trial (rep=1, index=0): None
+15.2215	EXP	Stopped presenting text
+15.2215	EXP	Stopped presenting text_2
+15.2215	EXP	Set text pos=[-93.  41.]
+15.2215	EXP	Set text_2 pos=[ 219.  180.]
+15.2215	EXP	Started presenting text
+15.2215	EXP	Started presenting text_2
+16.2392	DATA	Keypress: y
+16.2406	EXP	New trial (rep=2, index=0): None
+16.2553	EXP	Stopped presenting text
+16.2553	EXP	Stopped presenting text_2
+16.2553	EXP	Set text pos=[  63. -220.]
+16.2553	EXP	Set text_2 pos=[-172.    9.]
+16.2553	EXP	Started presenting text
+16.2553	EXP	Started presenting text_2
+17.1564	DATA	Keypress: n
+17.1577	EXP	New trial (rep=3, index=0): None
+17.1723	EXP	Stopped presenting text
+17.1723	EXP	Stopped presenting text_2
+17.1723	EXP	Set text pos=[ 142. -346.]
+17.1723	EXP	Set text_2 pos=[  28. -252.]
+17.1723	EXP	Started presenting text
+17.1723	EXP	Started presenting text_2
+18.5905	DATA	Keypress: y
+18.5918	EXP	New trial (rep=4, index=0): None
+18.6066	EXP	Stopped presenting text
+18.6066	EXP	Stopped presenting text_2
+18.6066	EXP	Set text pos=[ 184.  299.]
+18.6066	EXP	Set text_2 pos=[ -37.  152.]
+18.6066	EXP	Started presenting text
+18.6066	EXP	Started presenting text_2
+20.6081	DATA	Keypress: n
+20.6094	EXP	New trial (rep=0, index=1): {'stimFile': u'/Users/katielynam/labeled_photos/photos/003099.png'}
+20.7242	EXP	Stopped presenting text
+20.7242	EXP	Stopped presenting text_2
+20.7242	EXP	Set image image=/Users/katielynam/labeled_photos/photos/003099.png
+20.7242	EXP	Started presenting image
+21.5425	EXP	Created sequence: random, trialTypes=1, nReps=5, seed=None
+21.5433	EXP	New trial (rep=0, index=0): None
+21.5580	EXP	Stopped presenting image
+21.5580	EXP	Set text pos=[ 311. -132.]
+21.5580	EXP	Set text_2 pos=[ 278.  280.]
+21.5580	EXP	Started presenting text
+21.5580	EXP	Started presenting text_2
+23.2594	DATA	Keypress: n
+23.2609	EXP	New trial (rep=1, index=0): None
+23.2756	EXP	Stopped presenting text
+23.2756	EXP	Stopped presenting text_2
+23.2756	EXP	Set text pos=[ -32. -176.]
+23.2756	EXP	Set text_2 pos=[-168.   95.]
+23.2756	EXP	Started presenting text
+23.2756	EXP	Started presenting text_2
+24.0331	DATA	Keypress: y
+24.0343	EXP	New trial (rep=2, index=0): None
+24.0485	EXP	Stopped presenting text
+24.0485	EXP	Stopped presenting text_2
+24.0485	EXP	Set text pos=[ 164.  302.]
+24.0485	EXP	Set text_2 pos=[-241. -238.]
+24.0485	EXP	Started presenting text
+24.0485	EXP	Started presenting text_2
+24.9147	DATA	Keypress: n
+24.9160	EXP	New trial (rep=3, index=0): None
+24.9310	EXP	Stopped presenting text
+24.9310	EXP	Stopped presenting text_2
+24.9310	EXP	Set text pos=[  21. -298.]
+24.9310	EXP	Set text_2 pos=[  73.  261.]
+24.9310	EXP	Started presenting text
+24.9310	EXP	Started presenting text_2
+25.6455	DATA	Keypress: y
+25.6617	EXP	New trial (rep=4, index=0): None
+25.6769	EXP	Stopped presenting text
+25.6769	EXP	Stopped presenting text_2
+25.6769	EXP	Set text pos=[ 119.  174.]
+25.6769	EXP	Set text_2 pos=[ -87.  256.]
+25.6769	EXP	Started presenting text
+25.6769	EXP	Started presenting text_2
+29.0956	DATA	Keypress: n
+29.0969	EXP	New trial (rep=0, index=2): {'stimFile': u'/Users/katielynam/labeled_photos/photos/003046.png'}
+29.2122	EXP	Stopped presenting text
+29.2122	EXP	Stopped presenting text_2
+29.2122	EXP	Set image image=/Users/katielynam/labeled_photos/photos/003046.png
+29.2122	EXP	Started presenting image
+30.4974	EXP	Created sequence: random, trialTypes=1, nReps=5, seed=None
+30.4981	EXP	New trial (rep=0, index=0): None
+30.5128	EXP	Stopped presenting image
+30.5128	EXP	Set text pos=[ 345. -260.]
+30.5128	EXP	Set text_2 pos=[ 350. -123.]
+30.5128	EXP	Started presenting text
+30.5128	EXP	Started presenting text_2
+31.5307	DATA	Keypress: y
+31.5322	EXP	New trial (rep=1, index=0): None
+31.5467	EXP	Stopped presenting text
+31.5467	EXP	Stopped presenting text_2
+31.5467	EXP	Set text pos=[-128.   17.]
+31.5467	EXP	Set text_2 pos=[-100.   46.]
+31.5467	EXP	Started presenting text
+31.5467	EXP	Started presenting text_2
+32.9481	DATA	Keypress: y
+32.9494	EXP	New trial (rep=2, index=0): None
+32.9640	EXP	Stopped presenting text
+32.9640	EXP	Stopped presenting text_2
+32.9640	EXP	Set text pos=[ 238.  153.]
+32.9640	EXP	Set text_2 pos=[-245. -244.]
+32.9640	EXP	Started presenting text
+32.9640	EXP	Started presenting text_2
+36.2666	DATA	Keypress: n
+36.2679	EXP	New trial (rep=3, index=0): None
+36.2826	EXP	Stopped presenting text
+36.2826	EXP	Stopped presenting text_2
+36.2826	EXP	Set text pos=[  -4. -106.]
+36.2826	EXP	Set text_2 pos=[ 331.  -18.]
+36.2826	EXP	Started presenting text
+36.2826	EXP	Started presenting text_2
+37.1171	DATA	Keypress: y
+37.1184	EXP	New trial (rep=4, index=0): None
+37.1330	EXP	Stopped presenting text
+37.1330	EXP	Stopped presenting text_2
+37.1330	EXP	Set text pos=[-15.  34.]
+37.1330	EXP	Set text_2 pos=[-283.  347.]
+37.1330	EXP	Started presenting text
+37.1330	EXP	Started presenting text_2
+38.9059	DATA	Keypress: n
+38.9071	EXP	New trial (rep=0, index=3): {'stimFile': u'/Users/katielynam/labeled_photos/photos/003063.png'}
+39.0171	EXP	Stopped presenting text
+39.0171	EXP	Stopped presenting text_2
+39.0171	EXP	Set image image=/Users/katielynam/labeled_photos/photos/003063.png
+39.0171	EXP	Started presenting image
+39.7522	EXP	Created sequence: random, trialTypes=1, nReps=5, seed=None
+39.7529	EXP	New trial (rep=0, index=0): None
+39.7677	EXP	Stopped presenting image
+39.7677	EXP	Set text pos=[-124. -321.]
+39.7677	EXP	Set text_2 pos=[ 290. -219.]
+39.7677	EXP	Started presenting text
+39.7677	EXP	Started presenting text_2
+98.3170	DATA	Keypress: n
+98.3336	EXP	New trial (rep=1, index=0): None
+98.3487	EXP	Stopped presenting text
+98.3487	EXP	Stopped presenting text_2
+98.3487	EXP	Set text pos=[ 218.  313.]
+98.3487	EXP	Set text_2 pos=[ -99.  272.]
+98.3487	EXP	Started presenting text
+98.3487	EXP	Started presenting text_2
+99.0863	DATA	Keypress: y
+99.0876	EXP	New trial (rep=2, index=0): None
+99.1025	EXP	Stopped presenting text
+99.1025	EXP	Stopped presenting text_2
+99.1025	EXP	Set text pos=[   6.  140.]
+99.1025	EXP	Set text_2 pos=[ -21. -185.]
+99.1025	EXP	Started presenting text
+99.1025	EXP	Started presenting text_2
+100.6167	DATA	Keypress: y
+100.6180	EXP	New trial (rep=3, index=0): None
+100.6330	EXP	Stopped presenting text
+100.6330	EXP	Stopped presenting text_2
+100.6330	EXP	Set text pos=[  11.  106.]
+100.6330	EXP	Set text_2 pos=[ -48. -210.]
+100.6330	EXP	Started presenting text
+100.6330	EXP	Started presenting text_2
+101.2674	DATA	Keypress: y
+101.2687	EXP	New trial (rep=4, index=0): None
+101.2834	EXP	Stopped presenting text
+101.2834	EXP	Stopped presenting text_2
+101.2834	EXP	Set text pos=[-110.   67.]
+101.2834	EXP	Set text_2 pos=[-196. -213.]
+101.2834	EXP	Started presenting text
+101.2834	EXP	Started presenting text_2
+102.1512	DATA	Keypress: y
+102.1525	EXP	New trial (rep=0, index=4): {'stimFile': u'/Users/katielynam/labeled_photos/photos/003075.png'}
+102.2505	EXP	Stopped presenting text
+102.2505	EXP	Stopped presenting text_2
+102.2505	EXP	Set image image=/Users/katielynam/labeled_photos/photos/003075.png
+102.2505	EXP	Started presenting image
+103.5022	EXP	Created sequence: random, trialTypes=1, nReps=5, seed=None
+103.5029	EXP	New trial (rep=0, index=0): None
+103.5179	EXP	Stopped presenting image
+103.5179	EXP	Set text pos=[  72.  186.]
+103.5179	EXP	Set text_2 pos=[ 318. -356.]
+103.5179	EXP	Started presenting text
+103.5179	EXP	Started presenting text_2
+104.7359	DATA	Keypress: n
+104.7374	EXP	New trial (rep=1, index=0): None
+104.7519	EXP	Stopped presenting text
+104.7519	EXP	Stopped presenting text_2
+104.7519	EXP	Set text pos=[  -7. -279.]
+104.7519	EXP	Set text_2 pos=[ 256.   49.]
+104.7519	EXP	Started presenting text
+104.7519	EXP	Started presenting text_2
+106.1700	DATA	Keypress: n
+106.1713	EXP	New trial (rep=2, index=0): None
+106.1858	EXP	Stopped presenting text
+106.1858	EXP	Stopped presenting text_2
+106.1858	EXP	Set text pos=[ 272. -310.]
+106.1858	EXP	Set text_2 pos=[ -62.  100.]
+106.1858	EXP	Started presenting text
+106.1858	EXP	Started presenting text_2
+107.5874	DATA	Keypress: n
+107.5887	EXP	New trial (rep=3, index=0): None
+107.6035	EXP	Stopped presenting text
+107.6035	EXP	Stopped presenting text_2
+107.6035	EXP	Set text pos=[-282.  -55.]
+107.6035	EXP	Set text_2 pos=[ 231.  263.]
+107.6035	EXP	Started presenting text
+107.6035	EXP	Started presenting text_2
+108.9380	DATA	Keypress: y
+108.9393	EXP	New trial (rep=4, index=0): None
+108.9542	EXP	Stopped presenting text
+108.9542	EXP	Stopped presenting text_2
+108.9542	EXP	Set text pos=[ 337. -153.]
+108.9542	EXP	Set text_2 pos=[-205. -296.]
+108.9542	EXP	Started presenting text
+108.9542	EXP	Started presenting text_2
+110.0886	DATA	Keypress: n
+680.3364	DEBUG	Saving data for testpictures ExperimentHandler
