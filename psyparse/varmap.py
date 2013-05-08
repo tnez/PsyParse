@@ -107,8 +107,8 @@ def attributes_for_class(klass_name):
 
 def _read_available_classes():
     import os.path
-    libdir = '%s/../lib' % (os.path.abspath(os.path.dirname(__file__)))
-    f = open('%s/klass_map.txt' % libdir, 'rb')
+    dataDir = '%s/data' % (os.path.abspath(os.path.dirname(__file__)))
+    f = open('%s/klass_map.txt' % dataDir, 'rb')
     try:
         while 1:
             line = f.readline()
