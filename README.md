@@ -48,4 +48,4 @@ classes.
 
 ## Usage
 
-*This needs to be completed*
+[Sample Use Case](http://tnez.github.io/PsyParse/examples/sample_usage.pdf)
