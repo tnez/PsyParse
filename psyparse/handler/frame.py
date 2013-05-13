@@ -34,7 +34,19 @@ class Frame(Tree):
         if self.header is not None:
             print self.header
         print self.values
-    
+
+    def head(self, number_of_records=10):
+        """Print the first few records."""
+        # print the header
+        print ','.join(map(str,self.header)) # print the header
+        # print the first few records
+        records = self.values
+        for i in range(0, number_of_records):
+            try:
+                print ','.join(map(str, records[i]))
+            except IndexError:
+                break
+                
     @property
     def nodes(self):
         return self._nodes
