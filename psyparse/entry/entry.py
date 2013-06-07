@@ -81,6 +81,8 @@ def read(logfile=None, pos=None, raw_entry=None):
         pass
     elif log_type == 'INFO':
         pass
+    elif log_type == 'WARNING':
+        pass
     else:
         print "I do not handle the following entry: %s" % Entry(logfile,pos,raw_entry)
         
