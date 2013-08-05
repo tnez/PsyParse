@@ -1,7 +1,7 @@
 class Logfile(object):
 
     def __init__(self, filename=None):
-        self._filename = filename
+        self.filename = filename
         self._logfile = None
         from .varmap import VarMap
         self._mapped_variables = VarMap()
@@ -23,6 +23,15 @@ class Logfile(object):
             return self._filename
         except:
             return None
+
+    @filename.setter
+    def filename(self, new_filename):
+        if new_filename:
+            import os.path
+            if os.path.isfile(new_filename):
+                self._filename = new_filename
+            else:
+                raise(Exception("%s does not exist!" % new_filename))
         
     @property
     def handler(self):
