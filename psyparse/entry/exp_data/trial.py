@@ -7,11 +7,12 @@ class Trial(Entry):
         self._rep, self._index = _get_rep_and_index(self.log_text)
         logfile.register_current_trial(self)
         self._parent = _get_parent_from_trial_stack(logfile.trial_stack)
+        self._attributes = _get_attributes(raw_entry)
 
     def __str__(self):
         return "Trial: %s Rep: %i Idx: %i Start: %0.4f Stop: %0.4f Parent: %s" \
                 % (self.uuid, self.rep, self.index, self.start, self.stop, self.parent)
-        
+
     @property
     def start(self):
         return self.timestamp
@@ -34,6 +35,10 @@ class Trial(Entry):
     @property
     def parent(self):
         return self._parent
+
+    @property
+    def attributes(self):
+        return self._attributes
     
     def as_dict(self):
         ret = Entry.as_dict(self)
@@ -42,6 +47,7 @@ class Trial(Entry):
         ret['idx'] = self.index
         ret['rep'] = self.rep
         ret['parent'] = self.parent
+        ret.update(self.attributes)
         return ret
 
 def read(logfile=None, pos=None, raw_entry=None):
@@ -59,3 +65,14 @@ def _get_rep_and_index(text):
     rep = int(re.search('rep=(\d+)', text).group(1))
     index = int(re.search('index=(\d+)', text).group(1))
     return (rep+1, index+1)
+
+def _get_attributes(text):
+    # return dictionary defined in logfile
+    try:
+        openBracketPos = text.find('{')
+        closeBracketPos = text.find('}')
+        dictText = text[openBracketPos:closeBracketPos + 1]
+        return eval(dictText)
+    # return an empty dictionary on failure
+    except:
+        return dict()
